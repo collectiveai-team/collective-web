@@ -777,7 +777,7 @@ class Home extends React.Component {
                                                         <p className="card-text">
                                                             I have been programming all kinds of AI solutions for the last 6 years, but I
                                                             feel more like a hacker rather than a Data Scientist, I want to use AI as a
-                                                            tool to enhance human life. I'm fond of Foucault, that's why I try to put careful thought into how we relate with the knowledge and power, and the effects these might have by suppressing life. I love chess, art, robots and projects with social impact. I enjoy fusioning art and the edge of technology.
+                                                            tool to enhance human life. I'm fond of Nietzsche and Foucault, that's why I try to put careful thought into how we relate with the knowledge and power, and the effects these might have by suppressing life. I love chess, art, robots and projects with social impact. I enjoy fusioning art and the edge of technology.
 
                                                         </p>
                                                     </div>
@@ -837,17 +837,17 @@ class Home extends React.Component {
                                                 </div>
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/romina.png"
+                                                        src="static/juli.jpg"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
                                                         <h5 className="card-title">
-                                                        <Link href="https://www.linkedin.com/in/romina-ailín-landa">
+                                                        <Link href="https://www.linkedin.com/in/julian-ansaldo/">
                                                             <a
                                                                 className="zoom-on-hover"
                                                                 target="_blank"
                                                             >
-                                                                    ROMINA AILÍN LANDA
+                                                                    JULIAN ANSALDO
                                                                 <FontAwesomeIcon
                                                                 className="pl-2"
                                                                 icon={faLink}
@@ -857,7 +857,7 @@ class Home extends React.Component {
                                                         </Link>
                                                         </h5>
                                                         <p className="card-text">
-                                                        PhD in Chemistry, I got started in programming solving problems related to 3D structure image analysis of DNA. I teach at public universities because I believe non-transmitted knowledge is lost. I am excited about learning new things as much as playing soccer and everything related to dinosaurs.
+                                                        I studied Economics and that opened the door to data science for me. I have been working on the development of AI models for several years. I am passionate about music, board games and science fiction. I am also a teacher, I especially enjoy helping those who want to take their first steps in the world of programming.
 
                                                         </p>
                                                     </div>
