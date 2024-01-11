@@ -555,7 +555,7 @@ class Home extends React.Component {
                                                     <p>Seq2Seq</p>
                                                 </li>
                                                 <li className="scroll-show-up">
-                                                    <p>LLM's</p>
+                                                    <p>LLMs, RAG, and Assistans.</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -611,6 +611,9 @@ class Home extends React.Component {
                                                 </li>
                                                 <li className="scroll-show-up">
                                                     <p>Audio generation</p>
+                                                </li>
+                                                <li className="scroll-show-up">
+                                                    <p>VoiceBots</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -690,11 +693,11 @@ class Home extends React.Component {
                                 <section id="about" className="about">
                                     <div className="row pb-3 text-center">
                                         <h3 className="col-md-12 mb-5">
-                                            What is Collective.ai?
+                                            What Collective.ai stands for?
                                         </h3>
                                         <p className="col-md-12 about__desc">
                                             At Collective, we firmly believe in the power of collaboration and cooperation, not just as business principles, but as foundations of our interaction with society.
-                                            Our vision is focused on being an organization that positively impacts, actively being part of a social fabric that we seek to care for and strengthen.
+                                            Focused on creating a positive impact, our vision is to be an organization that nurtures and strengthens the social fabric of the communities we are a part of.
                                             We understand that our work does not unfold in a vacuum, but is an integral part of a broader network that includes suppliers, colleagues, and clients.
                                             We strive to develop relationships based on mutual respect and a shared commitment to common goals, recognizing that Collective's success is intrinsically linked to the well-being of the communities and individuals with whom we interact.
 
