@@ -179,10 +179,10 @@ class Home extends React.Component {
                                                 </Link>
                                             </li>
                                             <li className="nav-item manifest-link">
-                                                <Link href="https://drive.google.com/file/d/1F8Jjh6-xDrieGSdss0T2xI8xmz9GFKle/view?usp=sharing">
+                                                <Link href="https://drive.google.com/file/d/1-pcc8tPt_nh9_UbH688ETVG58e-8mG06/view?usp=sharing">
                                                     <a
                                                         className="nav-link"
-                                                        href="https://drive.google.com/file/d/1F8Jjh6-xDrieGSdss0T2xI8xmz9GFKle/view?usp=sharing"
+                                                        href="https://drive.google.com/file/d/1-pcc8tPt_nh9_UbH688ETVG58e-8mG06/view?usp=sharing"
                                                         download
                                                         target="_blank" // Add this line
                                                         rel="noopener noreferrer" // Add this line for security reasons
