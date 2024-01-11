@@ -118,7 +118,7 @@ class Home extends React.Component {
                 transition={{ duration: 1 }}
             >
                 <>
-                    <Head title="The advanced way - Collective.ai" />
+                    <Head title="Collective.ai" />
                     <div className="container-fluid">
                         <img
                             className="img-fluid"
@@ -196,9 +196,15 @@ class Home extends React.Component {
                                 </div>
                             </nav>
                             <div className="welcome text-center text-md-left col-12 col-md-10 mt-5">
-                                <h2 className="welcome__title mt-5 mt-md-0 show-up">
-                                    The advanced way
-                                </h2>
+                                <h3 className="welcome__title mt-5 mt-md-0 show-up">
+                                    From Deep Learning
+                                </h3>
+                                <h3 className="welcome__title mt-5 mt-md-0 show-up">
+                                    to Deep Impact
+                                </h3>
+                                {/* <h4 className="welcome__subtitle mt-5 mt-md-0 show-up">
+                                    Your Vision, Our Mission
+                                </h4> */}
                                 <div className="welcome__desc col-md-6 show-up">
                                     <p className="mb-0">
                                         Innovating in artificial intelligence and deep learning, we develop customized technological solutions from DevOps to MLOps, tailored to the unique needs of your business.
