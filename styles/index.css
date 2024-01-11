@@ -58,9 +58,16 @@ div {
     flex-grow: 0;
 }
 
+.welcome__subtitle {
+    font-size: 2.5em;
+    font-weight: 600;
+    /* max-width: 50%; */
+}
+
 .welcome__title {
     font-size: 5em;
     font-weight: 600;
+    /* max-width: 60%; */
 }
 
 .welcome__desc {
