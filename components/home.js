@@ -693,7 +693,7 @@ class Home extends React.Component {
                                 <section id="about" className="about">
                                     <div className="row pb-3 text-center">
                                         <h3 className="col-md-12 mb-5">
-                                            What Collective.ai stands for?
+                                            What does Collective.ai stand for?
                                         </h3>
                                         <p className="col-md-12 about__desc">
                                             At Collective, we firmly believe in the power of collaboration and cooperation, not just as business principles, but as foundations of our interaction with society.
