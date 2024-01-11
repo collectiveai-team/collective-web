@@ -5,13 +5,23 @@ import { TimelineMax, TweenMax, Linear } from 'gsap';
 import ScrollMagic from './_scrollMagic';
 import { motion } from "framer-motion";
 
+import { Carousel } from 'react-responsive-carousel';
+import Embed from 'react-embed';
+
 import { isMobile } from 'react-device-detect';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
-import { faGitlab } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+
+const mediumPosts = [
+    'https://medium.com/feed/retainable',
+    'https://medium.com/feed/vue-mastery',
+    'https://medium.com/feed/vue-mastery'
+    // Add more URLs as needed
+];
 
 class Home extends React.Component {
     constructor(props) {
@@ -169,12 +179,15 @@ class Home extends React.Component {
                                                 </Link>
                                             </li>
                                             <li className="nav-item manifest-link">
-                                                <Link href="/manifest">
+                                                <Link href="https://drive.google.com/file/d/1F8Jjh6-xDrieGSdss0T2xI8xmz9GFKle/view?usp=sharing">
                                                     <a
                                                         className="nav-link"
-                                                        href="#"
+                                                        href="https://drive.google.com/file/d/1F8Jjh6-xDrieGSdss0T2xI8xmz9GFKle/view?usp=sharing"
+                                                        download
+                                                        target="_blank" // Add this line
+                                                        rel="noopener noreferrer" // Add this line for security reasons
                                                     >
-                                                        manifest
+                                                        culture
                                                     </a>
                                                 </Link>
                                             </li>
@@ -188,15 +201,12 @@ class Home extends React.Component {
                                 </h2>
                                 <div className="welcome__desc col-md-6 show-up">
                                     <p className="mb-0">
-                                        At Collective AI, we’re passionate about
-                                        building new innovative AI and Deep Learning
-                                        solutions.
+                                        Innovating in artificial intelligence and deep learning, we develop customized technological solutions from DevOps to MLOps, tailored to the unique needs of your business.
                                     </p>
                                     <p>
-                                        Our team of professionals is here to inspire
-                                        you with their unique ideas and abilities.
+                                        Our highly qualified team is committed to deeply understand your project to develop a comprehensive solution that seamlessly integrates into your business strategy and generates measurable impact.
                                     </p>
-                                    <p>Get in touch today to learn more.</p>
+                                    <a href="#contact" className="clickable-link">Get in touch today to learn more.</a>
                                 </div>
                                 <img
                                     className="ant-welcome d-none d-md-block"
@@ -212,7 +222,7 @@ class Home extends React.Component {
                                     on every project
                                 </p>
                                 <section id="services" className="services">
-                                <svg
+                                    <svg
                                         className="back-services d-none d-md-block"
                                         id="full-lines"
                                     >
@@ -545,7 +555,7 @@ class Home extends React.Component {
                                                     <p>Seq2Seq</p>
                                                 </li>
                                                 <li className="scroll-show-up">
-                                                    <p>Text generation</p>
+                                                    <p>LLM's</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -562,7 +572,7 @@ class Home extends React.Component {
                                             </h3>
                                             <ul className="list-unstyled">
                                                 <li className="scroll-show-up">
-                                                    <p>Recomender</p>
+                                                    <p>Classification</p>
                                                 </li>
                                                 <li className="scroll-show-up">
                                                     <p>Knowledge graphs</p>
@@ -667,44 +677,39 @@ class Home extends React.Component {
                                     </h3>
                                     <p>Friedrich Nietzsche</p>
                                 </div>
+
+                                {/* <section id="projects" className="about">
+                                    <div className="row pb-3 text-center">
+                                        <h3 className="col-md-12 mb-5">Our Services</h3>
+
+
+                                        <iframe src='https://widgets.sociablekit.com/medium-publication-feed/iframe/25346928' frameborder='0' width='100%' height='1000'></iframe>
+                                    </div>
+
+                                </section> */}
                                 <section id="about" className="about">
                                     <div className="row pb-3 text-center">
                                         <h3 className="col-md-12 mb-5">
                                             What is Collective.ai?
                                         </h3>
                                         <p className="col-md-12 about__desc">
-                                            We are a group with a passion for
-                                            innovation and the creation of
-                                            technologies that can generate concrete
-                                            changes (micro politics) in the
-                                            transformation of this society. We
-                                            identify ourselves with nodes / neurons
-                                            forming a network, like an organism of
-                                            cells forming a unit, a decentralized
-                                            and self-regulating collectivity.
+                                            At Collective, we firmly believe in the power of collaboration and cooperation, not just as business principles, but as foundations of our interaction with society.
+                                            Our vision is focused on being an organization that positively impacts, actively being part of a social fabric that we seek to care for and strengthen.
+                                            We understand that our work does not unfold in a vacuum, but is an integral part of a broader network that includes suppliers, colleagues, and clients.
+                                            We strive to develop relationships based on mutual respect and a shared commitment to common goals, recognizing that Collective's success is intrinsically linked to the well-being of the communities and individuals with whom we interact.
+
                                         </p>
                                         <p className="col-md-12 about__desc">
-                                            Collective.ai was born from there, as a
-                                            resistance to individualization, because
-                                            we understand that it is from
-                                            collaboration and exchange that
-                                            alternatives to the problems of the
-                                            current era arise.
+                                            Looking inward at Collective, our strength lies in the diversity and richness of our team.
+                                            We value and promote an environment where cooperation and knowledge sharing are fundamental pillars.
+                                            We passionately believe in what we do and strive to cultivate diverse interests, both personally and professionally.
+                                            We understand that having a rich and multifaceted profile not only benefits the individual but also enriches our professional environment.
+                                            At Collective, each team member brings a unique perspective, contributing to a dynamic and creative work environment where ideas flow and transform into actions that reflect our vision and values.
                                         </p>
                                         <h6 className="col-md-12">
                                             We believe in:
                                         </h6>
                                         <ul className="col-md-12 list-inline">
-                                            <li className="list-inline-item">
-                                                <span className="badge">
-                                                    Non hierarchical structures
-                                                </span>
-                                            </li>
-                                            <li className="list-inline-item">
-                                                <span className="badge">
-                                                    Profit sharing
-                                                </span>
-                                            </li>
                                             <li className="list-inline-item">
                                                 <span className="badge">
                                                     Data Science for social good
@@ -713,6 +718,16 @@ class Home extends React.Component {
                                             <li className="list-inline-item">
                                                 <span className="badge">
                                                     Social responsibility
+                                                </span>
+                                            </li>
+                                            <li className="list-inline-item">
+                                                <span className="badge">
+                                                    Non hierarchical structures
+                                                </span>
+                                            </li>
+                                            <li className="list-inline-item">
+                                                <span className="badge">
+                                                    Profit sharing
                                                 </span>
                                             </li>
                                         </ul>
@@ -728,52 +743,58 @@ class Home extends React.Component {
                                             <div className="row justify-content-center mb-5">
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/ariel.png"
+                                                        src="static/ari.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
                                                         <h5 className="card-title">
-                                                        <Link href="https://www.linkedin.com/in/ariel-haimovici/">
-                                                            <a
-                                                                className="zoom-on-hover"
-                                                                target="_blank"
-                                                            >
+                                                            <Link href="https://www.linkedin.com/in/ariel-haimovici/">
+                                                                <a
+                                                                    className="zoom-on-hover"
+                                                                    target="_blank"
+                                                                >
                                                                     ARIEL HAIMOVICI
-                                                                <FontAwesomeIcon
-                                                                className="pl-2"
-                                                                icon={faLink}
-                                                            />
+                                                                    <FontAwesomeIcon
+                                                                        className="pl-2"
+                                                                        icon={faLink}
+                                                                    />
 
-                                                            </a>
-                                                        </Link>
+                                                                </a>
+                                                            </Link>
                                                         </h5>
+                                                        <p className="card-position">
+                                                            Data Scientist - Researcher
+                                                        </p>
                                                         <p className="card-text">
-                                                        Physicist turned into data scientist, I am enthusiastic about tackling challenging problems in an interdisciplinary environment. During my phd I did research on neurocience building dynamical models of large scale human brain activity and analyzing physiological signals of brain imaging experiments. I also enjoy teaching, I have given courses of physics, math and data science in different contexts in the past ten years. My less nerdy pastimes include playing football, swimming and gardening.
+                                                            Physicist turned into data scientist, I am enthusiastic about tackling challenging problems in an interdisciplinary environment. During my phd I did research on neurocience building dynamical models of large scale human brain activity and analyzing physiological signals of brain imaging experiments. I also enjoy teaching, I have given courses of physics, math and data science in different contexts in the past ten years. My less nerdy pastimes include playing football, swimming and gardening.
 
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/bastian-n.png"
+                                                        src="static/bas.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
                                                         <h5 className="card-title">
-                                                        <Link href="https://www.linkedin.com/in/bastiansg">
-                                                            <a
-                                                                className="zoom-on-hover"
-                                                                target="_blank"
-                                                            >
+                                                            <Link href="https://www.linkedin.com/in/bastiansg">
+                                                                <a
+                                                                    className="zoom-on-hover"
+                                                                    target="_blank"
+                                                                >
                                                                     BASTIAN SILVA
-                                                                <FontAwesomeIcon
-                                                                className="pl-2"
-                                                                icon={faLink}
-                                                            />
+                                                                    <FontAwesomeIcon
+                                                                        className="pl-2"
+                                                                        icon={faLink}
+                                                                    />
 
-                                                            </a>
-                                                        </Link>
+                                                                </a>
+                                                            </Link>
                                                         </h5>
+                                                        <p className="card-position">
+                                                            Artificial Intelligence Engineer
+                                                        </p>
                                                         <p className="card-text">
                                                             I have been programming all kinds of AI solutions for the last 6 years, but I
                                                             feel more like a hacker rather than a Data Scientist, I want to use AI as a
@@ -784,26 +805,29 @@ class Home extends React.Component {
                                                 </div>
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/lio-n.png"
+                                                        src="static/lio.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
-                                                        <h5 className="card-title">       
+                                                        <h5 className="card-title">
                                                             <Link href="https://www.linkedin.com/in/lionel-chamorro-8a531a11">
-                                                            <a
-                                                                className="zoom-on-hover"
-                                                                target="_blank"
-                                                            >
+                                                                <a
+                                                                    className="zoom-on-hover"
+                                                                    target="_blank"
+                                                                >
                                                                     LIONEL CHAMORRO
-                                                                <FontAwesomeIcon
-                                                                className="pl-2"
-                                                                icon={faLink}
-                                                            />
-                                                            </a>
-                                                        </Link>
+                                                                    <FontAwesomeIcon
+                                                                        className="pl-2"
+                                                                        icon={faLink}
+                                                                    />
+                                                                </a>
+                                                            </Link>
                                                         </h5>
+                                                        <p className="card-position">
+                                                            Solution & AI Architect
+                                                        </p>
                                                         <p className="card-text">
-                                                        I have more than a decade of experience in the industry, working as a software developer, then leading development teams and in the last 6 years I have been working as a Data Scientist. Passionate about mathematics, chess and philosophy. I studied mathematics and I was a teacher of several subjects of the career, currently I teach in Machine Learning courses. I am also a member and co-founder of the KuyKuy Foundation, a social impact project.
+                                                            I have more than a decade of experience in the industry, working as a software developer, then leading development teams and in the last 6 years I have been working as a Data Scientist. Passionate about mathematics, chess and philosophy. I studied mathematics and I was a teacher of several subjects of the career, currently I teach in Machine Learning courses. I am also a member and co-founder of the KuyKuy Foundation, a social impact project.
                                                         </p>
                                                     </div>
                                                 </div>
@@ -811,25 +835,28 @@ class Home extends React.Component {
                                             <div className="row justify-content-center">
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/raul-n.png"
+                                                        src="static/raul.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
                                                         <h5 className="card-title">
-                                                        <Link href="https://www.linkedin.com/in/rbarub">
-                                                            <a
-                                                                className="zoom-on-hover"
-                                                                target="_blank"
-                                                            >
+                                                            <Link href="https://www.linkedin.com/in/rbarub">
+                                                                <a
+                                                                    className="zoom-on-hover"
+                                                                    target="_blank"
+                                                                >
                                                                     RAUL BARRIGA
-                                                                <FontAwesomeIcon
-                                                                className="pl-2"
-                                                                icon={faLink}
-                                                            />
+                                                                    <FontAwesomeIcon
+                                                                        className="pl-2"
+                                                                        icon={faLink}
+                                                                    />
 
-                                                            </a>
-                                                        </Link>   
+                                                                </a>
+                                                            </Link>
                                                         </h5>
+                                                        <p className="card-position">
+                                                            Artificial Intelligence Engineer & Dev Ops
+                                                        </p>
                                                         <p className="card-text">
                                                             Data Scientist, Physicist, PhD candidate on Ecology. Working on Mathematical Modeling, Complex Systems and Machine Learning since 2015. Enthusiastic reader of Philosophy and love to discuss politics. I think that cooperation and symbiosis are the most needed values for our society and I'm always looking for ways to decrease the social gaps from the community.
                                                         </p>
@@ -837,27 +864,60 @@ class Home extends React.Component {
                                                 </div>
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/juli.jpg"
+                                                        src="static/juli.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
                                                         <h5 className="card-title">
-                                                        <Link href="https://www.linkedin.com/in/julian-ansaldo/">
-                                                            <a
-                                                                className="zoom-on-hover"
-                                                                target="_blank"
-                                                            >
+                                                            <Link href="https://www.linkedin.com/in/julian-ansaldo/">
+                                                                <a
+                                                                    className="zoom-on-hover"
+                                                                    target="_blank"
+                                                                >
                                                                     JULIAN ANSALDO
-                                                                <FontAwesomeIcon
-                                                                className="pl-2"
-                                                                icon={faLink}
-                                                            />
+                                                                    <FontAwesomeIcon
+                                                                        className="pl-2"
+                                                                        icon={faLink}
+                                                                    />
 
-                                                            </a>
-                                                        </Link>
+                                                                </a>
+                                                            </Link>
                                                         </h5>
+                                                        <p className="card-position">
+                                                            Artificial Intelligence Engineer
+                                                        </p>
                                                         <p className="card-text">
-                                                        I studied Economics and that opened the door to data science for me. I have been working on the development of AI models for several years. I am passionate about music, board games and science fiction. I am also a teacher, I especially enjoy helping those who want to take their first steps in the world of programming.
+                                                            I studied Economics and that opened the door to data science for me. I have been working on the development of AI models for several years. I am passionate about music, board games and science fiction. I am also a teacher, I especially enjoy helping those who want to take their first steps in the world of programming.
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="card col-md-4">
+                                                    <img
+                                                        src="static/paolo.png"
+                                                        alt=""
+                                                    />
+                                                    <div className="card-body">
+                                                        <h5 className="card-title">
+                                                            <Link href="https://www.linkedin.com/in/paolo-donizetti/">
+                                                                <a
+                                                                    className="zoom-on-hover"
+                                                                    target="_blank"
+                                                                >
+                                                                    PAOLO DONIZETTI
+                                                                    <FontAwesomeIcon
+                                                                        className="pl-2"
+                                                                        icon={faLink}
+                                                                    />
+
+                                                                </a>
+                                                            </Link>
+                                                        </h5>
+                                                        <p className="card-position">
+                                                            Project Manager - Data Scientist
+                                                        </p>
+                                                        <p className="card-text">
+                                                            I am a passionate data scientist with a strong combination of business and technical skills, enabling me to turn opportunities and challenges into successful data-driven projects. With a strong background in mathematics, economics and market research, I specialize in delivering innovative and impactful solutions across a variety of industries, including academia, industry and finance.
 
                                                         </p>
                                                     </div>
@@ -949,32 +1009,39 @@ class Home extends React.Component {
                                             </h5>
                                             <ul>
                                                 <li className="pb-2">
-                                                    CABA, Buenos Aires, Argentina
+                                                    Iturri 1429, CABA, Buenos Aires, Argentina
                                                 </li>
                                                 <li className="pb-2">
-                                                    <FontAwesomeIcon
+                                                    {/* <FontAwesomeIcon
                                                         className="footer-icon pr-2"
                                                         icon={faTelegramPlane}
                                                     />
-                                                    +54-11-57745516
+                                                    +54-11-57745516 */}
+
+                                                    <Link href={`tel:+541157745516`}>
+                                                        <a>
+                                                            <FontAwesomeIcon icon={faTelegramPlane} />
+                                                            +54-11-57745516
+                                                        </a>
+                                                    </Link>
                                                 </li>
                                                 <li className="pb-2">
                                                     <FontAwesomeIcon
                                                         className="footer-icon pr-2"
                                                         icon={faEnvelope}
                                                     />
-                                                    team.collective.ai@gmail.com
+                                                    info@collectiveai.io
                                                 </li>
                                                 <li>
                                                     <FontAwesomeIcon
                                                         className="footer-icon pr-2"
-                                                        icon={faGitlab}
+                                                        icon={faGithub}
                                                     />
                                                     <a
-                                                        href="https://gitlab.com/collective.ai"
+                                                        href="https://github.com/collectiveai-team/"
                                                         target="_blank"
                                                     >
-                                                        gitlab.com/collective.ai
+                                                        github.com/collectiveai-team
                                                     </a>
                                                 </li>
                                             </ul>
@@ -987,9 +1054,9 @@ class Home extends React.Component {
                             <p className="year">Collective.ai - {this.year}</p>
                         </footer>
                     </div>
-                
+
                 </>
-            </motion.div>  
+            </motion.div >
         );
     }
 }
