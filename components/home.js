@@ -743,7 +743,7 @@ class Home extends React.Component {
                                             <div className="row justify-content-center mb-5">
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/ari.png"
+                                                        src="static/jai_circle.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
@@ -773,7 +773,7 @@ class Home extends React.Component {
                                                 </div>
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/bas.png"
+                                                        src="static/bas_circle.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
@@ -805,7 +805,7 @@ class Home extends React.Component {
                                                 </div>
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/lio.png"
+                                                        src="static/lio_circle.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
@@ -835,7 +835,7 @@ class Home extends React.Component {
                                             <div className="row justify-content-center">
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/raul.png"
+                                                        src="static/raul_circle.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
@@ -864,7 +864,7 @@ class Home extends React.Component {
                                                 </div>
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/juli.png"
+                                                        src="static/juli_circle.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
@@ -894,7 +894,7 @@ class Home extends React.Component {
                                                 </div>
                                                 <div className="card col-md-4">
                                                     <img
-                                                        src="static/paolo.png"
+                                                        src="static/paolo_circle.png"
                                                         alt=""
                                                     />
                                                     <div className="card-body">
