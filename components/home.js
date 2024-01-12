@@ -179,10 +179,10 @@ class Home extends React.Component {
                                                 </Link>
                                             </li>
                                             <li className="nav-item manifest-link">
-                                                <Link href="https://drive.google.com/file/d/1-pcc8tPt_nh9_UbH688ETVG58e-8mG06/view?usp=sharing">
+                                                <Link href="https://drive.google.com/file/d/1oqEbWSHtM1UfIGoUDAlJ6U4CqiSFwjLh/view?usp=sharing">
                                                     <a
                                                         className="nav-link"
-                                                        href="https://drive.google.com/file/d/1-pcc8tPt_nh9_UbH688ETVG58e-8mG06/view?usp=sharing"
+                                                        href="https://drive.google.com/file/d/1oqEbWSHtM1UfIGoUDAlJ6U4CqiSFwjLh/view?usp=sharing"
                                                         download
                                                         target="_blank" // Add this line
                                                         rel="noopener noreferrer" // Add this line for security reasons
@@ -561,7 +561,7 @@ class Home extends React.Component {
                                                     <p>Seq2Seq</p>
                                                 </li>
                                                 <li className="scroll-show-up">
-                                                    <p>LLMs, RAG, and Assistans.</p>
+                                                    <p>LLMs, RAG, and Assistans</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1035,11 +1035,15 @@ class Home extends React.Component {
                                                     </Link>
                                                 </li>
                                                 <li className="pb-2">
-                                                    <FontAwesomeIcon
-                                                        className="footer-icon pr-2"
-                                                        icon={faEnvelope}
-                                                    />
-                                                    info@collectiveai.io
+                                                    <Link href={`mailto:info@collectiveai.io`}>
+                                                        <a>
+                                                            <FontAwesomeIcon
+                                                                className="footer-icon pr-2"
+                                                                icon={faEnvelope}
+                                                            />
+                                                            info@collectiveai.io
+                                                        </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
                                                     <FontAwesomeIcon
