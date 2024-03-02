@@ -10,8 +10,8 @@ import { TimelineMax, TweenMax, Linear } from 'gsap';
 import ScrollMagic from './_scrollMagic';
 import { motion } from "framer-motion";
 
-import { Carousel } from 'react-responsive-carousel';
-import Embed from 'react-embed';
+// import { Carousel } from 'react-responsive-carousel';
+// import Embed from 'react-embed';
 
 import { isMobile } from 'react-device-detect';
 
