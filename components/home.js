@@ -6,6 +6,7 @@ import ScrollMagic from './_scrollMagic';
 import { motion } from "framer-motion";
 
 import { Carousel } from 'react-responsive-carousel';
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Embed from 'react-embed';
 
 import { isMobile } from 'react-device-detect';
@@ -15,6 +16,8 @@ import { faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import WorldMap from "./worldmap/worldMap";
+import sealineData from "./worldmap/sources/fullLinesInfo.json";
 
 const mediumPosts = [
     'https://medium.com/feed/retainable',
@@ -30,6 +33,20 @@ class Home extends React.Component {
         this.state = { isScrolled: false };
         this.fixNav = this.fixNav.bind(this);
         this.controller = new ScrollMagic.Controller();
+        this.sealineData = sealineData.filter((e) => e.points.length > 0);
+
+        this.cmpys = {};
+        this.areas = {};
+        this.sealineData.forEach((e) => {
+            if (!this.areas[e.areaC]) {
+                this.areas[e.areaC] = e.areaN;
+            }
+            e.infos.forEach((f) => {
+                if (!this.cmpys[f.cmpyC]) {
+                    this.cmpys[f.cmpyC] = f.cmpyN;
+                }
+            });
+        });
     }
 
     componentDidMount() {
@@ -561,7 +578,7 @@ class Home extends React.Component {
                                                     <p>Seq2Seq</p>
                                                 </li>
                                                 <li className="scroll-show-up">
-                                                    <p>LLMs, RAG, and Assistans</p>
+                                                    <p>LLMs, RAG, and Assistants</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -740,6 +757,134 @@ class Home extends React.Component {
                                                 </span>
                                             </li>
                                         </ul>
+                                    </div>
+                                    <WorldMap
+                                        sealine={this.sealineData}
+                                        // pickedLine={this.sealineData}
+                                        pickedLine={[]}
+                                        areaMask={[]}
+                                        pickState={[]}
+                                        offPick={() => console.log('offPick')}
+                                    />
+                                    <div
+                                        id="projects"
+                                        className='row d-none d-md-flex projects align-items-center justify-content-center text-center p-5'
+                                    >
+                                        <h3 className="col-12 mb-5">
+                                            Projects
+                                        </h3>
+                                        <Carousel>
+                                            <div>
+                                                <div class="container text-center">
+                                                    <div class="row">
+                                                        <div class="col order-last">
+                                                            <div class="clearfix">
+
+                                                                <h5 className="card-title">
+                                                                    Dialog to Cart
+                                                                </h5>
+
+                                                                <p>
+                                                                    System designed to translate a dialogue between a user and a chatbot into a structured order of purchased items.
+                                                                </p>
+                                                                {/* <img src="static/projects/project1.webp" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..." /> */}
+                                                                <p>
+                                                                    The models involve transformers trained on augmented data for natural language understanding tasks, combined with query systems for menu item retrieval.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="clearfix">
+                                                                <h5 className="card-title">
+                                                                    Food Recommendation System
+                                                                </h5>
+
+                                                                <p>
+                                                                    Proof of Concept (POC) involves the development of a website that utilizes a question-based approach to provide personalized food recommendations for TacoBell customers.
+                                                                </p>
+                                                                {/* <img src="static/projects/project1.webp" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..." /> */}
+                                                                <p>
+                                                                    The system will process user questions about their preferences, dietary restrictions, and other relevant factors. These questions will be translated into SQL queries to retrieve relevant food items from the TacoBell menu database.
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col order-first">
+                                                            <div class="clearfix">
+                                                                <h5 className="card-title">
+                                                                    AymurAI
+                                                                </h5>
+
+                                                                <p>
+                                                                    OpenJustice Project. AymurAI is an AI system built to extract critical information about gender-based violence from judicial resolutions.
+                                                                </p>
+                                                                {/* <img src="static/projects/project1.webp" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..." /> */}
+                                                                <p>
+                                                                    OpenJustice Project. AymurAI is an AI system built to extract critical information about gender-based violence from judicial resolutions.
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div>
+                                                <div class="container text-center">
+                                                    <div class="row">
+                                                        <div class="col order-last">
+                                                            <div class="clearfix">
+
+                                                                <h5 className="card-title">
+                                                                    Dialog to Cart
+                                                                </h5>
+
+                                                                <p>
+                                                                    System designed to translate a dialogue between a user and a chatbot into a structured order of purchased items.
+                                                                </p>
+                                                                <img src="static/projects/project1.webp" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..." />
+                                                                <p>
+                                                                    The models involve transformers trained on augmented data for natural language understanding tasks, combined with query systems for menu item retrieval.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="clearfix">
+                                                                <h5 className="card-title">
+                                                                    Food Recommendation System
+                                                                </h5>
+
+                                                                <p>
+                                                                    Proof of Concept (POC) involves the development of a website that utilizes a question-based approach to provide personalized food recommendations for TacoBell customers.
+                                                                </p>
+                                                                <img src="static/projects/project1.webp" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..." />
+                                                                <p>
+                                                                    The system will process user questions about their preferences, dietary restrictions, and other relevant factors. These questions will be translated into SQL queries to retrieve relevant food items from the TacoBell menu database.
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col order-first">
+                                                            <div class="clearfix">
+                                                                <h5 className="card-title">
+                                                                    AymurAI
+                                                                </h5>
+
+                                                                <p>
+                                                                    OpenJustice Project. AymurAI is an AI system built to extract critical information about gender-based violence from judicial resolutions.
+                                                                </p>
+                                                                <img src="static/projects/project1.webp" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..." />
+                                                                <p>
+                                                                    OpenJustice Project. AymurAI is an AI system built to extract critical information about gender-based violence from judicial resolutions.
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Carousel>
                                     </div>
                                     <div
                                         id="team"
@@ -929,6 +1074,38 @@ class Home extends React.Component {
                                                             I am a passionate data scientist with a strong combination of business and technical skills, enabling me to turn opportunities and challenges into successful data-driven projects. With a strong background in mathematics, economics and market research, I specialize in delivering innovative and impactful solutions across a variety of industries, including academia, industry and finance.
 
                                                         </p>
+                                                    </div>
+                                                </div>
+                                                <div className="row justify-content-center">
+                                                    <div className="card col-md-4">
+                                                        <img
+                                                            src="static/ceci_circle.png"
+                                                            alt=""
+                                                        />
+                                                        <div className="card-body">
+                                                            <h5 className="card-title">
+                                                                <Link href="https://www.linkedin.com/in/cecilia-maas-49850091/">
+                                                                    <a
+                                                                        className="zoom-on-hover"
+                                                                        target="_blank"
+                                                                    >
+                                                                        Dr. Cecilia Maas
+                                                                        <FontAwesomeIcon
+                                                                            className="pl-2"
+                                                                            icon={faLink}
+                                                                        />
+
+                                                                    </a>
+                                                                </Link>
+                                                            </h5>
+                                                            <p className="card-position">
+                                                                Product Manager (via partnership with aureka.ai)
+                                                            </p>
+                                                            <p className="card-text">
+                                                                With a background in humanities and social sciences, I entered the world of technology motivated to design and accompany the development of products that address social challenges. I am passionate about human-machine interaction and I care not only about user-centered technical development, but also about accompanying the process of adoption of new technologies by organizations and individuals.
+
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

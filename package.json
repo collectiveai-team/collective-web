@@ -16,16 +16,31 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "animejs": "^3.0.1",
+    "antd": "^3.16.6",
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
+    "cdt2d": "^1.0.0",
+    "echarts": "^4.2.1",
     "framer-motion": "^4.1.17",
     "gsap": "^3.5.1",
     "next": "9.5.2",
+    "poly2tri": "^1.5.0",
+    "ramda": "^0.27.0",
     "react": "16.13.1",
     "react-device-detect": "^1.13.1",
     "react-dom": "16.13.1",
     "react-embed": "^3.7.0",
     "react-responsive-carousel": "^3.2.23",
     "react-scrollmagic": "^2.2.0",
-    "scrollmagic": "^2.0.7"
+    "roadhog": "^0.6.1",
+    "scrollmagic": "^2.0.7",
+    "stats-js": "^1.0.0",
+    "swiper": "^6.0.2",
+    "three": "^0.103.0",
+    "typescript": "^3.4.3"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }
