@@ -1,7 +1,7 @@
 # collective-web
 <br/>
 
-Setup-
+Setup
 -----
 
 This repo requires:
