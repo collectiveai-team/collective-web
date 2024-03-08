@@ -10,12 +10,19 @@ import { TimelineMax, TweenMax, Linear } from 'gsap';
 import ScrollMagic from './_scrollMagic';
 import { motion } from "framer-motion";
 
-// import { Carousel } from 'react-responsive-carousel';
-// import Embed from 'react-embed';
+import { Carousel } from 'react-responsive-carousel';
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Embed from 'react-embed';
 
 import { isMobile } from 'react-device-detect';
 
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import WorldMap from "./worldmap/worldMap";
+import sealineData from "./worldmap/sources/fullLinesInfo.json";
 
 const mediumPosts = [
     'https://medium.com/feed/retainable',
@@ -31,6 +38,20 @@ class Home extends React.Component {
         this.state = { isScrolled: false };
         this.fixNav = this.fixNav.bind(this);
         this.controller = new ScrollMagic.Controller();
+        this.sealineData = sealineData.filter((e) => e.points.length > 0);
+
+        this.cmpys = {};
+        this.areas = {};
+        this.sealineData.forEach((e) => {
+            if (!this.areas[e.areaC]) {
+                this.areas[e.areaC] = e.areaN;
+            }
+            e.infos.forEach((f) => {
+                if (!this.cmpys[f.cmpyC]) {
+                    this.cmpys[f.cmpyC] = f.cmpyN;
+                }
+            });
+        });
     }
 
     componentDidMount() {
@@ -176,6 +197,14 @@ class Home extends React.Component {
                                     </div>
 
                                 </section> */}
+                                <WorldMap
+                                    sealine={this.sealineData}
+                                    // pickedLine={this.sealineData}
+                                    pickedLine={[]}
+                                    areaMask={[]}
+                                    pickState={[]}
+                                    offPick={() => console.log('offPick')}
+                                />
                                 <About />
                                 <Technologies />
                             </div>
