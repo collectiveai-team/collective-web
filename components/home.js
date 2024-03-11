@@ -5,6 +5,7 @@ import Services from '../components/services'
 import About from '../components/about'
 import Technologies from '../components/technologies';
 import Contact from '../components/contact';
+import Portfolio from '../components/portfolio'
 
 import { TimelineMax, TweenMax, Linear } from 'gsap';
 import ScrollMagic from './_scrollMagic';
@@ -197,15 +198,18 @@ class Home extends React.Component {
                                     </div>
 
                                 </section> */}
-                                <WorldMap
+                                {/* <WorldMap
                                     sealine={this.sealineData}
                                     // pickedLine={this.sealineData}
                                     pickedLine={[]}
                                     areaMask={[]}
                                     pickState={[]}
                                     offPick={() => console.log('offPick')}
-                                />
+                                /> */}
                                 <About />
+                                <Portfolio />
+
+
                                 <Technologies />
                             </div>
                             <Contact />

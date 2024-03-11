@@ -1,0 +1,556 @@
+.image15Icon {
+    width: 28px;
+    height: 32px;
+    position: relative;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.image15Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12.699999999999989px 0 0;
+}
+
+.xtream {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 50px;
+    font-weight: 700;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.frameGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0 15px;
+}
+
+.textBlock {
+    position: relative;
+    line-height: 16px;
+    z-index: 1;
+}
+
+.home {
+    position: relative;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.homeLink,
+.textBlockParent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.homeLink {
+    flex-direction: row;
+    padding: 0 0 0 var(--padding-12xs);
+    margin-top: -5px;
+    font-size: var(--font-size-sm);
+}
+
+.textBlockParent {
+    flex-direction: column;
+}
+
+.semicolonFrames {
+    position: relative;
+    line-height: 16px;
+    z-index: 1;
+}
+
+.manifesto {
+    position: relative;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.dividerFrame,
+.manifestoDataScienceWebMob {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.manifestoDataScienceWebMob {
+    flex-direction: row;
+    padding: 0 0 0 var(--padding-12xs);
+    margin-top: -5px;
+    font-size: var(--font-size-sm);
+}
+
+.dividerFrame {
+    flex-direction: column;
+    padding: 0 29px 0 0;
+}
+
+.div {
+    position: relative;
+    line-height: 16px;
+    z-index: 1;
+}
+
+.dataScience {
+    position: relative;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.dataScienceWrapper,
+.dividerFrame1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.dataScienceWrapper {
+    flex-direction: row;
+    padding: 0 0 0 2px;
+    margin-top: -5px;
+    font-size: var(--font-size-sm);
+}
+
+.dividerFrame1 {
+    flex-direction: column;
+    padding: 0 10px 0 0;
+}
+
+.div1 {
+    position: relative;
+    line-height: 16px;
+    z-index: 1;
+}
+
+.webMobile {
+    position: relative;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.dividerFrame2,
+.webMobileWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.webMobileWrapper {
+    flex-direction: row;
+    padding: 0 0 0 var(--padding-12xs);
+    margin-top: -5px;
+    font-size: var(--font-size-sm);
+}
+
+.dividerFrame2 {
+    flex-direction: column;
+}
+
+.eRemove1 {
+    width: 8px;
+    height: 8px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.emptyFrame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 6.800000000000011px;
+}
+
+.dataFrame {
+    position: relative;
+    line-height: 16px;
+    z-index: 1;
+}
+
+.portfolio {
+    position: relative;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.headerFrame,
+.portfolioText,
+.textBlock1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.headerFrame {
+    height: 16.9px;
+    flex-direction: row;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: var(--font-size-sm);
+    color: var(--color-white);
+}
+
+.portfolioText,
+.textBlock1 {
+    flex-direction: column;
+}
+
+.textBlock1 {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0 32px 0 0;
+    gap: 0 7px;
+}
+
+.customerText {
+    position: relative;
+    line-height: 16px;
+    z-index: 1;
+}
+
+.team {
+    position: relative;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.portfolioText1,
+.projectsText {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.projectsText {
+    height: 16.9px;
+    flex-direction: row;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: var(--font-size-sm);
+}
+
+.portfolioText1 {
+    flex-direction: column;
+}
+
+.frameContainer,
+.frameGroup1 {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.frameGroup1 {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0 58px;
+}
+
+.frameContainer {
+    align-self: stretch;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--gap-xl);
+}
+
+.frameWrapper {
+    width: 860px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 7.300000000000011px;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-size: var(--font-size-3xs);
+    color: var(--color-darkgray);
+    font-family: var(--font-manrope);
+}
+
+.frameParent {
+    width: 1265px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--gap-xl);
+    max-width: 100%;
+    text-align: left;
+    font-size: var(--font-size-13xl);
+    color: var(--color-white);
+    font-family: var(--font-lexend);
+}
+
+.portfolio1 {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 50px;
+    font-weight: 700;
+    font-family: inherit;
+}
+
+.infoFrame {
+    width: 766px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.hereIsHow,
+.provenItsValue,
+.qualityHasAlready {
+    margin: 0;
+}
+
+.qualityHasAlreadyprovenContainer {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 68px;
+    font-weight: 700;
+    font-family: inherit;
+}
+
+.parentFrame {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 var(--padding-12xs);
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.feedbackBubble {
+    position: relative;
+    line-height: 54.6px;
+}
+
+.positiveText {
+    height: 53.1px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0 var(--padding-12xs);
+    box-sizing: border-box;
+}
+
+.projects {
+    position: relative;
+    font-size: var(--font-size-base);
+    line-height: 28px;
+    font-family: var(--font-manrope);
+    color: var(--color-mediumpurple);
+}
+
+.customerLogoImage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sectionFrame {
+    position: relative;
+    line-height: 54.8px;
+}
+
+.infoText {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0 var(--padding-12xs);
+}
+
+.customers {
+    position: relative;
+    font-size: var(--font-size-sm);
+    line-height: 22px;
+    font-family: var(--font-manrope);
+    color: var(--color-mediumpurple);
+}
+
+.dividerLine {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.6px 0;
+}
+
+.projectscontainer {
+    position: absolute;
+    margin: 0 !important;
+    top: -59.6px;
+    right: -8px;
+    line-height: 68px;
+    display: inline-block;
+}
+
+.positiveFeedback {
+    position: relative;
+    font-size: var(--font-size-base);
+    line-height: 28px;
+    font-family: var(--font-manrope);
+    color: var(--color-mediumpurple);
+    z-index: 1;
+}
+
+.qualityproof {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.projectlist {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 52.400000000000006px 0 0;
+}
+
+.projectlist,
+.projectsList,
+.testimonialsText {
+    display: flex;
+    align-items: flex-start;
+}
+
+.projectsList {
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--gap-xl);
+    font-size: var(--font-size-29xl);
+}
+
+.testimonialsText {
+    width: 804px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 78.6px 0;
+    max-width: 100%;
+}
+
+.qualityFrame,
+.type2LooselyConvertToVis {
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: var(--font-lexend);
+}
+
+.qualityFrame {
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 0 0 96px;
+    max-width: 100%;
+    font-size: 66px;
+    color: var(--color-white);
+}
+
+.type2LooselyConvertToVis {
+    width: 100%;
+    background-color: #141929;
+    box-shadow: 0 3px 6px rgba(18, 15, 40, 0.12);
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 19.30000000000001px 55px 78px;
+    gap: 65.85px 0;
+    letter-spacing: normal;
+    font-size: var(--font-size-13xl);
+    color: var(--color-mediumpurple);
+}
+
+@media screen and (max-width: 900px) {
+    .frameGroup1 {
+        gap: 0 29px;
+    }
+
+    .portfolio1 {
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .qualityHasAlreadyprovenContainer {
+        font-size: 53px;
+        line-height: 54px;
+    }
+
+    .feedbackBubble,
+    .projectscontainer,
+    .sectionFrame {
+        font-size: var(--font-size-19xl);
+        line-height: 54px;
+    }
+
+    .testimonialsText {
+        gap: 39px 0;
+    }
+
+    .qualityFrame {
+        padding-left: 48px;
+        box-sizing: border-box;
+    }
+
+    .type2LooselyConvertToVis {
+        gap: 33px 0;
+        padding-left: var(--padding-8xl);
+        padding-right: var(--padding-8xl);
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .portfolio1 {
+        font-size: 19px;
+        line-height: 30px;
+    }
+
+    .qualityHasAlreadyprovenContainer {
+        font-size: 40px;
+        line-height: 41px;
+    }
+
+    .feedbackBubble,
+    .projectscontainer,
+    .sectionFrame {
+        font-size: var(--font-size-10xl);
+        line-height: 41px;
+    }
+
+    .projectsList {
+        flex-wrap: wrap;
+    }
+
+    .testimonialsText {
+        gap: 20px 0;
+    }
+
+    .qualityFrame {
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+    .type2LooselyConvertToVis {
+        gap: 16px 0;
+    }
+}

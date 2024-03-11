@@ -1,6 +1,32 @@
 /*
 negro #131315
 */
+:root {
+    /* fonts */
+    --font-manrope: Manrope;
+    --font-lexend: Lexend;
+
+    /* font sizes */
+    --font-size-base: 16px;
+    --font-size-29xl: 48px;
+    --font-size-10xl: 29px;
+    --font-size-19xl: 38px;
+    --font-size-sm: 14px;
+    --font-size-13xl: 32px;
+    --font-size-3xs: 10px;
+
+    /* Colors */
+    --color-mediumpurple: #9f79f3;
+    --color-white: #fff;
+    --color-darkgray: #a8adb7;
+
+    /* Gaps */
+    --gap-xl: 20px;
+
+    /* Paddings */
+    --padding-8xl: 27px;
+    --padding-12xs: 1px;
+}
 
 * {
     margin: 0;

@@ -23,6 +23,16 @@ import steamAlpha from "./sources/steam.jpg";
 import boatImg from "./sources/boat.png";
 import beatPoint from "./object/beatPoint.js";
 
+
+// Example city coordinates
+const projectCities = {
+  BuenosAires: { lat: -34.603722, lng: -58.381592 },
+  Paris: { lat: 48.856614, lng: 2.352222 },
+  Rome: { lat: 41.902784, lng: 12.496366 },
+  Berlin: { lat: 52.520007, lng: 13.404954 },
+  NewYork: { lat: 40.712776, lng: -74.005974 },
+};
+
 const SET = global.Sets;
 export default class WorldMap extends Component {
   constructor(props) {
@@ -38,6 +48,8 @@ export default class WorldMap extends Component {
     this.raycaster = null;
     this.animationID = 0;
     this.ani = { completed: true };
+    this.currentMarker = null;
+    this.highlightRandomCity = this.highlightRandomCity.bind(this);
     this.objs = [
       {
         update: (time) => {
@@ -101,51 +113,9 @@ export default class WorldMap extends Component {
     this.land = new earthLand(world, SET.geoLineColor, worldTex, worldNormal);
     this.scene.add(this.land.getObj());
 
-    // Step 1: Create a circle geometry
-    let geometry = new THREE.CircleGeometry(5, 32);
-
-    // Step 2: Create a mesh material
-    let material = new THREE.MeshBasicMaterial({ color: "#ffff00" });
-
-    // Step 3: Combine the geometry and material to create a mesh
-    let circleMarker = new THREE.Mesh(geometry, material);
-
-    // Step 4: Position the mesh on the map
-    // "x": -58.3815591,
-    //     "y": 0.5,
-    //     "z": 34.6036844
-    circleMarker.position.set(160, 110, 1);
-
-    // Step 5: Add the mesh to the scene
-    this.scene.add(circleMarker);
-
-    this.raycaster = new THREE.Raycaster();
-    this.mouse = new THREE.Vector2();
-    // Step 1: Create a div element for the tooltip
-    var tooltip = document.createElement('div');
-
-    tooltip.style.position = 'absolute';
-    tooltip.style.visibility = 'hidden';
-    tooltip.style.background = '#ffffff';
-    tooltip.style.border = '1px solid #000000';
-    tooltip.style.padding = '10px';
-    tooltip.style.borderRadius = '5px';
-    tooltip.textContent = 'This is a tooltip';
-    document.body.appendChild(tooltip);
-
-    // circleMarker.addEventListener('click', (event) => this.tooltipMouseMove(event, tooltip), false);
-    circleMarker.addEventListener('click', function (e) {
-      this.bindTooltip("My Tooltip Text").openTooltip();
-    });
-    // Add an event listener for the mousemove event
-    // window.addEventListener('mousemove', this.tooltipMouseMove.bind(this), false);
-    // window.addEventListener('mousemove', (event) => this.tooltipMouseMove(event, tooltip, circleMarker))
-
-    // Add an event listener for the mouseout event
-    // window.addEventListener('mouseout', function () {
-    //   // Hide the tooltip
-    //   tooltip.style.visibility = 'hidden';
-    // }, false);
+    // Initial highlight and set interval for updates
+    this.highlightRandomCity();
+    this.interval = setInterval(this.highlightRandomCity, 30000);
 
 
     //sealine generator
@@ -230,11 +200,14 @@ export default class WorldMap extends Component {
     };
     this.container.addEventListener("dblclick", this.containerDBclick);
   }
+
   componentWillUnmount() {
     this.container.removeEventListener("dblclick", this.containerDBclick);
     cancelAnimationFrame(this.animationID);
+    clearInterval(this.interval);
     this.props.sealine.forEach((e) => e.sealine.unmount && e.sealine.unmount());
   }
+
   componentDidUpdate() {
     let flag = this.props.pickState;
     this.lineFilter(flag);
@@ -242,6 +215,8 @@ export default class WorldMap extends Component {
       this.focuse(flag.pickLine);
     }
   }
+
+
 
   lineFilter(flag) {
     let picked = {};
@@ -394,6 +369,7 @@ export default class WorldMap extends Component {
     //=========      =========
     // this.stats.end();
     this.animationID = requestAnimationFrame((t) => this.update(t));
+
   }
 
   tooltipMouseMove(event, tooltip) {
@@ -402,6 +378,41 @@ export default class WorldMap extends Component {
     tooltip.style.left = event.clientX + 'px';
     tooltip.style.top = event.clientY + 'px';
 
+  }
+
+  highlightRandomCity() {
+    // if (this.currentMarker) {
+    //   // Remove the previous marker from the scene
+    //   this.scene.remove(this.currentMarker);
+    //   this.currentMarker.geometry.dispose();
+    //   this.currentMarker.material.dispose();
+    //   currentMarker = null;
+    // }
+
+
+
+    const cityKeys = Object.keys(projectCities);
+    const randomCityKey = cityKeys[Math.floor(Math.random() * cityKeys.length)];
+    const city = projectCities[randomCityKey];
+
+    //   const position = latLngToVector3(city.lat, city.lng);
+    //   const geometry = new THREE.SphereGeometry(0.5, 32, 32);
+    //   const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    //   const marker = new THREE.Mesh(geometry, material);
+    //   marker.position.set(position.x, position.y, position.z);
+
+    //   // Assuming `scene` is your Three.js scene
+    //   this.scene.add(marker);
+    let cood = millerXY(city.lng, city.lat);
+    let citypos = new THREE.Vector3(cood[0], cood[1], 1);
+    let color = "#FFAB00";
+    let cityPoint = new beatPoint(1.7, color, citypos);
+    // let board = this.textFactory.frag(cityPoint, k, 66, color);
+    // cityPoint.add(board.obj);
+    // board.obj.position.z = 3;
+    // board.obj.layers = cityPoint.layers;
+    this.currentMarker = cityPoint;
+    this.scene.add(cityPoint);
   }
 
   render() {
