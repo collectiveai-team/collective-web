@@ -11,18 +11,10 @@ import { TimelineMax, TweenMax, Linear } from 'gsap';
 import ScrollMagic from './_scrollMagic';
 import { motion } from "framer-motion";
 
-import { Carousel } from 'react-responsive-carousel';
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import Embed from 'react-embed';
 
 import { isMobile } from 'react-device-detect';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-import WorldMap from "./worldmap/worldMap";
+
 import sealineData from "./worldmap/sources/fullLinesInfo.json";
 
 const mediumPosts = [
@@ -60,7 +52,7 @@ class Home extends React.Component {
 
         if (!isMobile) {
             const sceneRoll = new ScrollMagic.Scene({
-                triggerElement: 'header',
+                triggerElement: 'Head',
                 triggerHook: 0.9,
                 reverse: false,
             })
@@ -68,7 +60,7 @@ class Home extends React.Component {
                 .addTo(this.controller);
 
             const sceneSize = new ScrollMagic.Scene({
-                triggerElement: 'header',
+                triggerElement: 'Head',
                 triggerHook: 0.9,
             })
                 .setClassToggle('.title-mid', 'font-size-up')

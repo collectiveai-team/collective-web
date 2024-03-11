@@ -103,7 +103,7 @@ export default class WorldMap extends Component {
     this.scene.add(envlight);
 
     let world = drawThreeGeo(mapVec, 1, "plane", ["ATA"]);
-    console.log(world);
+
     // drawThreeGeo(rivers, 1, "plane", { color: SET.waterColor }, this.scene);
     // drawThreeGeo(lakes, 1, "plane", { color: SET.waterColor }, this.scene);
     let worldTex = new THREE.TextureLoader().load(earthNightMap);
@@ -276,65 +276,65 @@ export default class WorldMap extends Component {
   }
 
   focuse(line) {
-    this.ani && this.ani.pause && this.ani.pause();
-    let sealine = line.sealine;
-    this.focuseLine = sealine;
-    let endPoint = sealine.boat.position;
-    this.boatBoard.position.copy(endPoint);
-    this.boatBoard.position.y += 2;
-    this.boatBoard.position.z = 3;
+    // this.ani && this.ani.pause && this.ani.pause();
+    // let sealine = line.sealine;
+    // this.focuseLine = sealine;
+    // let endPoint = sealine.boat.position;
+    // this.boatBoard.position.copy(endPoint);
+    // this.boatBoard.position.y += 2;
+    // this.boatBoard.position.z = 3;
 
-    if (sealine) {
-      let boat = sealine.boat;
-      let { x, y, z } = this.camera.position;
-      let target = { x, y, z };
-      this.ani = anime({
-        targets: target,
-        duration: 1000,
-        // endDelay: 100000000,
-        easing: "easeInQuad",
-        x: endPoint.x + 20,
-        y: endPoint.y - 70,
-        z: 120,
-        autoplay: false,
-        round: 1,
-        update: (a) => {
-          let boatPos = boat.position;
-          this.camera.position.copy(target);
-          this.camera.lookAt(endPoint);
-          this.camera.rotation.z = 0;
-          this.land.meshMat.opacity = (100 - 5 * a.progress) / 100;
-          this.land.lineMat.opacity = Math.max(30, 5 * a.progress) / 100;
-          sealine.focus();
-        },
-        changeComplete: (a) => {
-          this.camera.layers.enable(3);
+    // if (sealine) {
+    //   let boat = sealine.boat;
+    //   let { x, y, z } = this.camera.position;
+    //   let target = { x, y, z };
+    //   this.ani = anime({
+    //     targets: target,
+    //     duration: 1000,
+    //     // endDelay: 100000000,
+    //     easing: "easeInQuad",
+    //     x: endPoint.x + 20,
+    //     y: endPoint.y - 70,
+    //     z: 120,
+    //     autoplay: false,
+    //     round: 1,
+    //     update: (a) => {
+    //       let boatPos = boat.position;
+    //       this.camera.position.copy(target);
+    //       this.camera.lookAt(endPoint);
+    //       this.camera.rotation.z = 0;
+    //       this.land.meshMat.opacity = (100 - 5 * a.progress) / 100;
+    //       this.land.lineMat.opacity = Math.max(30, 5 * a.progress) / 100;
+    //       sealine.focus();
+    //     },
+    //     changeComplete: (a) => {
+    //       this.camera.layers.enable(3);
 
-          this.camera.lookAt(endPoint);
-          this.camera.rotation.z = 0;
-          this.focusing(boat);
-        },
-      });
-    }
+    //       this.camera.lookAt(endPoint);
+    //       this.camera.rotation.z = 0;
+    //       this.focusing(boat);
+    //     },
+    //   });
+    // }
   }
 
   focusing(boat) {
-    this.ani && this.ani.pause();
-    const target = { x: 0 };
-    this.ani = anime({
-      targets: target,
-      duration: 1000,
-      // endDelay: 100000000,
-      easing: "easeInQuad",
-      x: 100,
-      autoplay: false,
-      loop: true,
-      update: (a) => {
-        let boatPos = boat.position;
-        this.camera.position.set(boatPos.x + 20, boatPos.y - 70, 120);
-        this.camera.lookAt(boatPos);
-      },
-    });
+    // this.ani && this.ani.pause();
+    // const target = { x: 0 };
+    // this.ani = anime({
+    //   targets: target,
+    //   duration: 1000,
+    //   // endDelay: 100000000,
+    //   easing: "easeInQuad",
+    //   x: 100,
+    //   autoplay: false,
+    //   loop: true,
+    //   update: (a) => {
+    //     let boatPos = boat.position;
+    //     this.camera.position.set(boatPos.x + 20, boatPos.y - 70, 120);
+    //     this.camera.lookAt(boatPos);
+    //   },
+    // });
   }
 
   back() {
@@ -360,7 +360,7 @@ export default class WorldMap extends Component {
     // this.stats.begin();
 
     //=========      =========
-    // this.renderer.clear();
+    this.renderer.clear();
     this.objs.forEach((e) => {
       e.update(t, e);
     });
@@ -381,13 +381,13 @@ export default class WorldMap extends Component {
   }
 
   highlightRandomCity() {
-    // if (this.currentMarker) {
-    //   // Remove the previous marker from the scene
-    //   this.scene.remove(this.currentMarker);
-    //   this.currentMarker.geometry.dispose();
-    //   this.currentMarker.material.dispose();
-    //   currentMarker = null;
-    // }
+    if (this.currentMarker) {
+      // Remove the previous marker from the scene
+      this.scene.remove(this.currentMarker);
+      this.currentMarker.geometry.dispose();
+      this.currentMarker.material.dispose();
+      this.currentMarker = null;
+    }
 
 
 
@@ -405,14 +405,19 @@ export default class WorldMap extends Component {
     //   this.scene.add(marker);
     let cood = millerXY(city.lng, city.lat);
     let citypos = new THREE.Vector3(cood[0], cood[1], 1);
-    let color = "#FFAB00";
-    let cityPoint = new beatPoint(1.7, color, citypos);
+    // let color = "#FFAB00";
+    // let cityPoint = new beatPoint(1.7, color, citypos);
+    const geometry = new THREE.SphereGeometry(1.5, 32, 32);
+    const material = new THREE.MeshBasicMaterial({ color: 0xFFAB00 });
+    const marker = new THREE.Mesh(geometry, material);
+    marker.position.set(citypos.x, citypos.y, citypos.z);
     // let board = this.textFactory.frag(cityPoint, k, 66, color);
     // cityPoint.add(board.obj);
     // board.obj.position.z = 3;
     // board.obj.layers = cityPoint.layers;
-    this.currentMarker = cityPoint;
-    this.scene.add(cityPoint);
+    // this.currentMarker = cityPoint;
+    this.currentMarker = marker;
+    this.scene.add(this.currentMarker);
   }
 
   render() {
