@@ -1,6 +1,46 @@
 /*
 negro #131315
 */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap");
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+:root {
+    /* fonts */
+    --font-manrope: Manrope;
+    --font-lexend: Lexend;
+
+    /* font sizes */
+    --font-size-xs: 12px;
+    --font-size-base: 16px;
+
+    /* Colors */
+    --color-white: #fff;
+    --color-darkslategray: #424856;
+    --color-gray: #171a1f;
+
+    /* Gaps */
+    --gap-20xl-5: 39.5px;
+
+    /* Paddings */
+    --padding-4xl: 23px;
+    --padding-10xs-5: 2.5px;
+    --padding-8xs: 5px;
+    --padding-5xl: 24px;
+    --padding-9xl: 28px;
+    --padding-11xs-5: 1.5px;
+    --padding-9xs: 4px;
+    --padding-4xl-5: 23.5px;
+    --padding-53xl: 72px;
+
+    /* Border radiuses */
+    --br-9xs: 4px;
+}
+
 :root {
     /* fonts */
     --font-manrope: Manrope;

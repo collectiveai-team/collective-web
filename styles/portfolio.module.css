@@ -480,6 +480,16 @@
     color: var(--color-mediumpurple);
 }
 
+.centerSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #141929;
+}
+
 @media screen and (max-width: 900px) {
     .frameGroup1 {
         gap: 0 29px;

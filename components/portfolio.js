@@ -3,6 +3,7 @@ import styles from "../styles/portfolio.module.css";
 
 import WorldMap from "./worldmap/worldMap";
 import sealineData from "./worldmap/sources/fullLinesInfo.json";
+import Projects from "./projects";
 
 class Portfolio extends React.Component {
     constructor(props) {
@@ -59,7 +60,7 @@ class Portfolio extends React.Component {
                         </div>
                     </div>
                 </footer>
-                <section className={styles.testimonialsTextl}>
+                <section className={styles.centerSection}>
                     <WorldMap
                         sealine={this.sealineData}
                         // pickedLine={this.sealineData}
@@ -68,6 +69,7 @@ class Portfolio extends React.Component {
                         pickState={[]}
                         offPick={() => console.log('offPick')}
                     />
+                    <Projects />
                 </section>
             </div>
         );
