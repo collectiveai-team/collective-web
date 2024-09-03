@@ -6,7 +6,7 @@ Setup
 
 This repo requires:
 
-    - node v16.18.0 or above
+    - node v16.18.0 or above (not working with node v20)
     - npm 8.19.2 or above
 <br/>
 
