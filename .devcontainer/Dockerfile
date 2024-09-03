@@ -41,18 +41,19 @@ RUN apt update && apt install -y \
     && rm -rf /var/lib/apt/lists/*
 
 
-WORKDIR /home/vscode
 
 USER $USER_NAME
+ENV USER_NAME=$USER_NAME
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # # nvm & nodejs
+WORKDIR /home/$USER_NAME
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash \
     && export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" \
     && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
     && nvm install ${NODEJS_VERSION} \
     && nvm alias default ${NODEJS_VERSION}
 
-RUN echo 'export NVM_DIR="/home/vscode/.nvm"' >> /home/${USER_NAME}/.zshrc \
+RUN echo 'export NVM_DIR="/home/${USER_NAME}/.nvm"' >> /home/${USER_NAME}/.zshrc \
     && echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> /home/${USER_NAME}/.zshrc \
     && echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"' >> /home/${USER_NAME}/.zshrc
